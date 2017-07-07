@@ -24,7 +24,15 @@ SdrSensorInfo 定义用户所关心采集数据的结构，SensorType所采集�
 “PSU Redundancy”，“Watchdog”等，avail描述所采集的数据值是否可用，false为unavailable，true为available
 
 
-Native IPMI implementation and `ipmitool` wrapper in Go.
+
+
+#### func  GetSensorList
+
+```go
+func GetSensorList(reservationID uint16) ([]SdrSensorInfo, error) 
+```
+reservationID是采集前获取的，
+用来迭代RecordId直到RecordId等于oxffff，将获取的信息保存到数组SdrSensorInfo中
 
 ## License
 
