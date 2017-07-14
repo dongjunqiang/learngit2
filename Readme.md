@@ -24,14 +24,15 @@ SdrSensorInfo 定义用户所关心采集数据的结构：SensorType所采集�
 ```go
 func GetSensorList(reservationID uint16) ([]SdrSensorInfo, error) 
 ```
-reservationID是采集前获取的，
+reservationID是采集前获取的初始值，
 用来迭代RecordId直到RecordId等于oxffff，将获取的信息保存到数组SdrSensorInfo中
 
 #### func  GetSDR
 ```go
 func GetSDR(reservationID uint16, recordID uint16) (sdr *sDRRecordAndValue, next uint16, err error) 
 ```
-reservationID是采集前获取的，
+执行ipmi命令   ‘Get SDR’commands ，
+reservationID保持连接用的，
 用来迭代RecordId直到RecordId等于oxffff，将获取的信息保存到数组SdrSensorInfo中
 ## License
 
